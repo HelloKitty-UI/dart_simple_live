@@ -1,9 +1,13 @@
 name: app-build-action
-#推送Tag时触发
+
 on:
   push:
     tags:
       - "tv_*"
+  # 👇 添加下面这一行，即可启用手动触发
+  workflow_dispatch:
+
+
 jobs:
   build-tv:
     runs-on: macos-latest
